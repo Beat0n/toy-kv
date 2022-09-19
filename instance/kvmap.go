@@ -1,5 +1,7 @@
 package instance
 
+import "toy-kv/iface"
+
 type KvMap[Key, Value any] struct {
 	m map[any]Value
 }
@@ -24,4 +26,8 @@ func (kvmap *KvMap[Key, Value]) Range(f func(key Key, value Value) bool) {
 			return
 		}
 	}
+}
+
+func NewKvMap(key, value any) iface.IMap[Key, Value] {
+
 }
